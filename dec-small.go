@@ -302,7 +302,7 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(slice1_stage2)
+	//fmt.Println(slice1_stage2)
 
 	var outstring string
 
