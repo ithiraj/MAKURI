@@ -229,8 +229,6 @@ func main() {
 
 	slice_stage1 := make([]string, 2*len(user_input))
 
-	//STAGE 1 STARTS HERE
-
 	for iteration_stage1 = 0; iteration_stage1 < len(user_input); iteration_stage1++ {
 
 		for find_stage1 = 0; find_stage1 < len(stor); find_stage1++ {
@@ -244,11 +242,6 @@ func main() {
 
 		}
 	}
-	fmt.Println("SLICE 1 =", slice_stage1) /* -------------------------------USE THIS FOR DECODE-------------------------------*/
-	//STAGE 1 FINISHED HERE
-
-	//STAGE 2 STARTS
-	/*______________________________________________ THIS IS FOR CHANGING TO STAGE 2_________________________________ */
 
 	for iteration4value = 0; iteration4value < len(slice_stage1); iteration4value++ {
 		if slice_stage1[iteration4value] != "" {
@@ -294,7 +287,6 @@ func main() {
 
 	var outstring string
 
-	fmt.Println("SLICE 2 =", slice_stage2)
 	for iteration4value1 = 0; iteration4value1 < len(slice_stage2); iteration4value1++ {
 
 		if slice_stage2[iteration4value1] != "" {
@@ -303,7 +295,6 @@ func main() {
 		}
 
 	}
-	//fmt.Println(value1)
 
 	for iteration4outstring := 0; iteration4outstring < value1; iteration4outstring++ {
 		outstring = outstring + string(slice_stage2[iteration4outstring])

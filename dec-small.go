@@ -7,7 +7,7 @@ import (
 
 func main() {
 	var str string
-	var iteration_stage1 int
+	var iteration_stage1, value1, iteration4value1 int
 
 	var stor [92]string
 
@@ -227,42 +227,35 @@ func main() {
 
 	fmt.Println("ENTER THE CIPHER")
 	fmt.Scan(&str)
-	fmt.Println(len(str))
+
 	slice_stage1 := make([]string, len(str))
-	fmt.Println(len(slice_stage1))
+
 	var slice2_stage1 []string
 	flag := 0
 	pos := 0
 	iteration2_stage1 := 0
 
 	for iteration_stage1 = 0; iteration_stage1 < len(str); iteration_stage1++ {
-		//fmt.Println("first for ------------------ ", iteration_stage1, "slice", slice_stage1)
-		for iteration2_stage1 = 0; iteration2_stage1 < len(map_stage1); iteration2_stage1++ {
 
-			//fmt.Println("Second for ------------------ ", iteration2_stage1, "slice", slice_stage1)
+		for iteration2_stage1 = 0; iteration2_stage1 < len(map_stage1); iteration2_stage1++ {
 
 			if string(str[iteration_stage1]) == map_stage1[iteration2_stage1] {
 				flag = 1
 				pos = iteration2_stage1
-				//slice_stage1 = append(slice_stage1, string(str[iteration2_stage1]))
+
 			}
 
 		}
 		if flag == 0 {
-			//store the same value
+
 			slice_stage1[iteration_stage1] = string(str[iteration_stage1])
 		} else {
-			//store the mapped number
+
 			slice_stage1[iteration_stage1] = stor1[pos]
 			flag = 0
 		}
 
 	}
-
-	fmt.Println("BEFORE DASH", slice_stage1)
-	fmt.Println(len(slice_stage1))
-
-	//to edit
 
 	num_sli := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 
@@ -272,7 +265,6 @@ func main() {
 		var res2 int
 
 		flag1 := 0
-		//fmt.Println("START", slice2_stage1)
 
 		res1 := sort.SearchStrings(num_sli, slice_stage1[i])
 		if i == len(slice_stage1)-1 {
@@ -297,48 +289,7 @@ func main() {
 			i += 2
 		}
 
-		//fmt.Println("END", slice2_stage1)
-
 	}
-
-	/*
-		for i := 0; i < len(slice_stage1); {
-			var data2 int
-			flag1 := 0
-			fmt.Println("START", slice2_stage1)
-
-			data1, _ := strconv.Atoi(slice_stage1[i])
-			if i == len(slice_stage1)-1 {
-				flag1 = 1
-
-			} else {
-
-				data2, _ = strconv.Atoi(slice_stage1[i+1])
-			}
-
-			if data1 != 0 && data2 != 0 {
-				res := slice_stage1[i] + "_"
-				slice2_stage1 = append(slice2_stage1, res)
-				i += 1
-
-			} else if flag1 == 1 {
-				res := slice_stage1[i] + "_"
-				slice2_stage1 = append(slice2_stage1, res)
-				i += 1
-
-			} else {
-				res := slice_stage1[i] + slice_stage1[i+1]
-				slice2_stage1 = append(slice2_stage1, res)
-				i += 2
-			}
-
-			fmt.Println("END", slice2_stage1)
-		}
-	*/
-	// to edit
-
-	fmt.Println(slice2_stage1)
-	fmt.Println(len(slice2_stage1))
 
 	slice1_stage2 := make([]string, len(slice2_stage1))
 
@@ -352,4 +303,21 @@ func main() {
 		}
 	}
 	fmt.Println(slice1_stage2)
+
+	var outstring string
+
+	for iteration4value1 = 0; iteration4value1 < len(slice1_stage2); iteration4value1++ {
+
+		if slice1_stage2[iteration4value1] != "" {
+			value1 = iteration4value1 + 1
+
+		}
+
+	}
+
+	for iteration4outstring := 0; iteration4outstring < value1; iteration4outstring++ {
+		outstring = outstring + string(slice1_stage2[iteration4outstring])
+	}
+	fmt.Println("----", outstring)
+
 }
